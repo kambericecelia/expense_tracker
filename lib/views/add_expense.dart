@@ -130,17 +130,13 @@ class _AddExpenseState extends State<AddExpense> {
                         focusNode: dropdownFocusNode,
                         width: 310,
                         menuStyle: MenuStyle(
-                          backgroundColor: WidgetStatePropertyAll(Colors.white)
-                        ),
-                        // menuStyle: MenuStyle(
-                        //   backgroundColor: WidgetStatePropertyAll<Color?>(
-                        //       dropdownValue != null
-                        //           ? Category.getCategoryColor(dropdownValue!).withOpacity(0.1)
-                        //           : Colors.white),
-                        // ),
+                            backgroundColor:
+                                WidgetStatePropertyAll(Colors.white)),
                         inputDecorationTheme: InputDecorationTheme(
                             filled: true,
-                            fillColor: Colors.white,
+                            fillColor: dropdownValue != null
+                                ? Category.getCategoryColor(dropdownValue!)
+                                : Colors.white,
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10))),
                         onSelected: (String? value) {
@@ -152,11 +148,15 @@ class _AddExpenseState extends State<AddExpense> {
                         },
                         dropdownMenuEntries: Category.values.map((category) {
                           return DropdownMenuEntry<String>(
-                            // style: MenuItemButton.styleFrom(
-                            //   backgroundColor:
-                            //       Category.getCategoryColor(dropdownValue!),
-                            //   //foregroundColor: Colors.white
-                            // ),
+                            style: MenuItemButton.styleFrom(
+                              backgroundColor:
+                                  Category.getCategoryColor(category.name),
+                              shape: RoundedRectangleBorder(
+                                   borderRadius: BorderRadius.circular(5),
+                                  side: BorderSide(
+                                      color: Colors.white, width: 1)
+                              ),
+                            ),
                             value: category.name,
                             label: category.name,
                             leadingIcon:
