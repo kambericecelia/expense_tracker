@@ -33,7 +33,7 @@ Here are some screenshots of the app in action:
 ### Login Page
 
 
-![Login Page](assets/images/test.png)
+![Login Page](assets/images/login.png)
 
 ### Register Page
 ![Register Page](assets/images/register.png)
