@@ -3,7 +3,7 @@ import 'package:expenses_app/enums/category.dart';
 import 'package:expenses_app/expense.dart';
 import 'package:expenses_app/services/expense_service.dart';
 
-import 'package:expenses_app/views/expenses.dart';
+import 'package:expenses_app/views/user_expenses_listed.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -50,7 +50,6 @@ class _AddExpenseState extends State<AddExpense> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     dropdownFocusNode.addListener(() {
       if (dropdownFocusNode.hasFocus) {
@@ -61,7 +60,6 @@ class _AddExpenseState extends State<AddExpense> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     dropdownFocusNode.dispose();
     super.dispose();
   }
@@ -81,7 +79,7 @@ class _AddExpenseState extends State<AddExpense> {
                   IconButton(
                     icon: Icon(Icons.arrow_back, color: Colors.grey),
                     onPressed: () {
-                      Navigator.pushNamed(context, Expenses.id);
+                      Navigator.pushNamed(context, UserExpenses.id);
                     },
                   ),
                 ],

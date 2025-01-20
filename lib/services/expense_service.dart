@@ -24,28 +24,6 @@ class ExpenseService {
     }
   }
 
-  // Future<List<Expense>> userExpenses() async {
-  //   final user = _auth.currentUser;
-  //   if (user != null) {
-  //     final snapshot = await _firestore
-  //         .collection('users')
-  //         .doc(user.uid)
-  //         .collection('expenses')
-  //         .get();
-  //
-  //     return snapshot.docs.map((doc) {
-  //       final data = doc.data();
-  //       return Expense(
-  //         amount: data['amount'] ?? 0,
-  //         category: data['category'] ?? '',
-  //         note: data['note'] ?? '',
-  //         date: (data['date'] as Timestamp).toDate(),
-  //       );
-  //     }).toList();
-  //   }
-  //   return [];
-  // }
-
 
   Stream<List<Expense>> userExpenses() {
     final user = _auth.currentUser;

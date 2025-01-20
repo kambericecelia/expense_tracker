@@ -4,7 +4,7 @@ import 'package:expenses_app/views/login_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:expenses_app/components/bottom_button.dart';
-import 'expenses.dart';
+import 'user_expenses_listed.dart';
 import '../components/login_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';

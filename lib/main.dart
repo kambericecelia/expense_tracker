@@ -1,6 +1,6 @@
 
 import 'package:expenses_app/views/add_expense.dart';
-import 'package:expenses_app/views/expenses.dart';
+import 'package:expenses_app/views/user_expenses_listed.dart';
 import 'package:expenses_app/views/login_page.dart';
 import 'package:expenses_app/views/sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     initialRoute: LoginPage.id,
     routes: {
         AddExpense.id: (context) =>AddExpense(),
-        Expenses.id: (context) => Expenses(),
+        UserExpenses.id: (context) => UserExpenses(),
         LoginPage.id: (context) => LoginPage(),
         SignUp.id:(context) => SignUp(),
     }

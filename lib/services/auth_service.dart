@@ -1,4 +1,4 @@
-import 'package:expenses_app/views/expenses.dart';
+import 'package:expenses_app/views/user_expenses_listed.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -51,7 +51,7 @@ class AuthService {
       );
 
       // Navigate to Expenses page
-      Navigator.pushReplacementNamed(context, Expenses.id);
+      Navigator.pushReplacementNamed(context, UserExpenses.id);
     } on FirebaseAuthException catch (e) {
       String errorMessage = "Login failed";
       if (e.code == 'user-not-found') {
@@ -112,7 +112,7 @@ class AuthService {
       );
 
       // Navigate to login screen or home
-      Navigator.pushReplacementNamed(context, Expenses.id);
+      Navigator.pushReplacementNamed(context, UserExpenses.id);
     } on FirebaseAuthException catch (e) {
       String errorMessage = "Sign up failed";
       if (e.code == 'weak-password') {

@@ -1,7 +1,6 @@
 import 'package:expenses_app/enums/category.dart';
 import 'package:expenses_app/constants.dart';
 import 'package:expenses_app/components/category_card.dart';
-import 'package:expenses_app/expense.dart';
 import 'package:expenses_app/views/add_expense.dart';
 import 'package:expenses_app/views/login_page.dart';
 import 'package:flutter/material.dart';
@@ -9,14 +8,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import '../services/expense_service.dart';
 
-class Expenses extends StatefulWidget {
+class UserExpenses extends StatefulWidget {
   static const String id = 'list_expenses';
 
   @override
-  State<Expenses> createState() => _ExpensesState();
+  State<UserExpenses> createState() => _UserExpensesState();
 }
 
-class _ExpensesState extends State<Expenses> {
+class _UserExpensesState extends State<UserExpenses> {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final ExpenseService _expenseService = ExpenseService();
   User? user = FirebaseAuth.instance.currentUser;
@@ -24,10 +23,7 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
-
     if (user?.email != null) {
       userName = user!.email!.substring(0, user!.email!.indexOf('@'));
     }
